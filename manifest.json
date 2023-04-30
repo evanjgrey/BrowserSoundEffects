@@ -1,0 +1,6 @@
+{
+    "manifest_version": 3,
+    "name": "Browser Sound Effects",
+    "description": "Play cute sound effects when typing or clicking around your browser",
+    "version": "1.0"
+}
