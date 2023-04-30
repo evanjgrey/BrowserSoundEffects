@@ -6,6 +6,7 @@
 
     <script>
         const audio = new Audio("./sounds/shinunoga.mp3");
+        audio.volume = 0.5;
         const jayAudio = new Audio("./sounds/jay.mp3");
         const tabIn = new Audio("./sounds/tabin.wav");
         const tabOuts = [new Audio("./sounds/tabout1.wav"), new Audio("./sounds/tabout2.wav"), new Audio("./sounds/tabout3.wav"), new Audio("./sounds/tabout4.wav")];
@@ -22,8 +23,9 @@
 
         document.addEventListener('keydown', (e) => {
             var keydown = new Audio("./sounds/bom.wav");
+            keydown.volume = 0.5;
 
-            if (e.key === 'Shift' || e.key === ' ' || e.key === "Tab") {
+            if (e.key === 'Shift' || e.key === ' ' || e.key === "Tab" || e.key === "Backspace" || | e.key === "Control") {
                 return;
             }
 
@@ -31,6 +33,8 @@
         });
 
         $(window).blur(function() {
+            tabIn.pause();
+            tabIn.currentTime = 0;
 
             tabOuts[tabCount].play();
             tabCount++;
@@ -43,6 +47,9 @@
         });
 
         $(window).focus(function() {
+            tabOuts[tabCount].pause();
+            tabOuts[tabCount].currentTime = 0;
+
             tabIn.play();
         });
     </script>
