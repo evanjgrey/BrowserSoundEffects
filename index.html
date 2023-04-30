@@ -14,7 +14,7 @@
 
         function stopAudio() {
             audio.pause();
-        }
+        };
 
         function audioPlayer() {
             audio.play();
@@ -24,7 +24,7 @@
             var keydown = new Audio("./sounds/bom.wav");
             keydown.volume = 0.5;
 
-            if (e.key === 'Shift' || e.key === ' ' || e.key === "Tab" || e.key === "Backspace" || | e.key === "Control") {
+            if (e.key === 'Shift' || e.key === ' ' || e.key === "Tab" || e.key === "Backspace" || e.key === "Control") {
                 return;
             }
 
