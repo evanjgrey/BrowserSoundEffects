@@ -7,7 +7,7 @@
     <script>
         const audio = new Audio("./sounds/shinunoga.mp3");
         const jayAudio = new Audio("./sounds/jay.mp3");
-
+        const tabIn = new Audio("./sounds/tabin.wav");
         const tabOuts = [new Audio("./sounds/tabout1.wav"), new Audio("./sounds/tabout2.wav"), new Audio("./sounds/tabout3.wav"), new Audio("./sounds/tabout4.wav")];
 
         var tabCount = 0;
@@ -21,7 +21,7 @@
         };
 
         document.addEventListener('keydown', (e) => {
-            keydown = new Audio("./sounds/bom.wav");
+            var keydown = new Audio("./sounds/bom.wav");
 
             if (e.key === 'Shift' || e.key === ' ' || e.key === "Tab") {
                 return;
@@ -35,10 +35,15 @@
             tabOuts[tabCount].play();
             tabCount++;
 
+            //probably wanna add a timer at some point tbh
             if (tabCount === 4) {
                 tabCount = 0;
             }
 
+        });
+
+        $(window).focus(function() {
+            tabIn.play();
         });
     </script>
 </head>
