@@ -8,6 +8,10 @@
         const audio = new Audio("./sounds/shinunoga.mp3");
         const jayAudio = new Audio("./sounds/jay.mp3");
 
+        const tabOuts = [new Audio("./sounds/tabout1.wav"), new Audio("./sounds/tabout2.wav"), new Audio("./sounds/tabout3.wav"), new Audio("./sounds/tabout4.wav")];
+
+        var tabCount = 0;
+
         function audioPlayer() {
             audio.play();
         };
@@ -15,7 +19,7 @@
         document.addEventListener('keydown', (e) => {
             keydown = new Audio("./sounds/bom.wav");
 
-            if (e.key === 'Shift') {
+            if (e.key === 'Shift' || e.key === 'Space') {
                 return;
             }
 
@@ -23,12 +27,14 @@
         });
 
         $(window).blur(function() {
-            jayAudio.currentTime = 40;
-            jayAudio.play();
 
-            if (jayAudio.currentTime > 50) {
-                jayAudio.pause();
+            tabOuts[tabCount].play();
+            tabCount++;
+
+            if (tabCount === 5) {
+                tabCount = 0;
             }
+
         });
     </script>
 </head>
