@@ -12,6 +12,10 @@
 
         var tabCount = 0;
 
+        function stopAudio() {
+            audio.pause();
+        }
+
         function audioPlayer() {
             audio.play();
         };
@@ -19,7 +23,7 @@
         document.addEventListener('keydown', (e) => {
             keydown = new Audio("./sounds/bom.wav");
 
-            if (e.key === 'Shift' || e.key === 'Space') {
+            if (e.key === 'Shift' || e.key === ' ' || e.key === "Tab") {
                 return;
             }
 
@@ -31,7 +35,7 @@
             tabOuts[tabCount].play();
             tabCount++;
 
-            if (tabCount === 5) {
+            if (tabCount === 4) {
                 tabCount = 0;
             }
 
@@ -43,10 +47,12 @@
     <h1>Test</h1>
 
     <form>
-        <input type="text" placeholder="Test Type Here">
+        <input type="text" placeholder="Test Type Here" style="height: 200px; width: 300px;">
     </form>
 
     <button type="button" onclick="audioPlayer()">Click!</button>
+
+    <button type="button" onclick="stopAudio()">Stop Audio Please</button>
 </body>
 
 </html>
