@@ -15,6 +15,10 @@
         document.addEventListener('keydown', (e) => {
             keydown = new Audio("./sounds/bom.wav");
 
+            if (e.key === 'Shift') {
+                return;
+            }
+
             keydown.play();
         });
 
