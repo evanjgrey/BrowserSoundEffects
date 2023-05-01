@@ -4,6 +4,15 @@
     "description": "Play cute sound effects when typing or clicking around your browser",
     "version": "0.0",
 
-    "permissions": ["activeTab", "tabGroups"]
+    "permissions": ["tabs", "activeTab"],
 
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "./images/fujiishinunoga.png"
+    },
+
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
 }
